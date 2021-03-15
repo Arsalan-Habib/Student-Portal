@@ -1,0 +1,22 @@
+{
+  "name": "student-portal",
+  "version": "1.0.0",
+  "description": "An Online Portal for students and faculty.",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Arsalan-Habib/Student-Portal.git"
+  },
+  "author": "Syed Arsalan Habib",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Arsalan-Habib/Student-Portal/issues"
+  },
+  "homepage": "https://github.com/Arsalan-Habib/Student-Portal#readme",
+  "dependencies": {
+    "xlsx": "^0.16.9"
+  }
+}
