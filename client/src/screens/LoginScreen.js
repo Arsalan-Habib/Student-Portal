@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const LoginScreen = () => {
     return (
-        <div className='flex flex-col mx-auto md:w-1/3 px-2 justify-center items-center min-h-fillHeight '>
+        <div className='flex flex-col  mx-auto md:w-1/3 px-2 justify-center items-center min-h-fillHeight '>
             <h3 className='text-xl md:text-4xl text-gray-300 text-center'>
                 SIGN IN
             </h3>
@@ -14,7 +14,7 @@ const LoginScreen = () => {
                 <input
                     className='bg-gray-800 md:text-xl focus:outline-none h-10 my-2 md:my-3 px-2 rounded-md'
                     id='email'
-                    type='text'
+                    type='email'
                     required
                 />
 
@@ -29,7 +29,10 @@ const LoginScreen = () => {
                 />
                 <span className='text-sm md:text-lg'>
                     Don't have an account? Sign up
-                    <Link className='font-semibold  text-gray-100 hover:text-green-500 '>
+                    <Link
+                        to='/register'
+                        className='font-semibold  text-gray-100 hover:text-green-500 '
+                    >
                         {" "}
                         here.
                     </Link>

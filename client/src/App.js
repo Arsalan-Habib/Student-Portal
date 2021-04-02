@@ -1,16 +1,18 @@
 import Navbar from "./components/Navbar";
-import { BrowserRouter } from "react-router-dom";
+import { BrowserRouter as Router, Route } from "react-router-dom";
 import Container from "./components/Container";
 import LoginScreen from "./screens/LoginScreen";
+import RegisterScreen from "./screens/RegisterScreen";
 
 function App() {
     return (
-        <BrowserRouter>
+        <Router>
             <Navbar />
             <Container>
-                <LoginScreen />
+                <Route path='/login' component={LoginScreen} />
+                <Route path='/register' component={RegisterScreen} />
             </Container>
-        </BrowserRouter>
+        </Router>
     );
 }
 
