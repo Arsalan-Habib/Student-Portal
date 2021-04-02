@@ -21,12 +21,13 @@ const Navbar = () => {
     // styles for active link
     const activeStyle = {
         color: "white",
-        backgroundColor: "rgba(17, 24, 39)",
+        backgroundColor: "rgba(31, 41, 55)", // bg-gray-700
+        // border: "4px solid rgba(6, 95, 70)",
     };
 
     return (
-        <nav className='bg-gray-800 border-b-4 border-gray-700'>
-            <div className='max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
+        <nav className='bg-gray-900 border-b-2 border-gray-700 font-mono'>
+            <div className='2xl:max-w-8xl max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
                 <div className='relative flex items-center justify-between h-16'>
                     <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
                         {/* Menu Button for mobile */}
