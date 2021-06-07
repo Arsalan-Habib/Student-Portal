@@ -3,6 +3,7 @@ const express = require("express");
 const cors = require("cors");
 const dotenv = require("dotenv");
 const { connectDB } = require("./config/db");
+const { notFound, errorHandler } = require("./middleware/errorMiddleware");
 
 // linking to the .env file
 dotenv.config();
@@ -29,6 +30,12 @@ app.get("/", (req, res) => {
         "Welcome to the student portal api. All the api routes are available as /api"
     );
 });
+
+// handling not founds
+app.use(notFound);
+
+// handling errors and formatting them
+app.use(errorHandler);
 
 const PORT = process.env.PORT || 5000;
 
