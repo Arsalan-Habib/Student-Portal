@@ -31,7 +31,7 @@ const RegisterScreen = () => {
         if (e.target.files) {
             setProfileImage(e.target.files[0]);
         } else {
-            setProfileImage("");
+            setProfileImage(null);
         }
     }
 
@@ -47,26 +47,36 @@ const RegisterScreen = () => {
         });
     }
 
+    // onSubmit function
     async function registerStudent() {
         setLoading(true);
 
-        const student = {
-            ...studentInfo,
-            image: await encodeImage(profileImage),
-        };
-
-        try {
-            console.log(student);
-            const { data } = await studentApi.post("", student);
-            console.log(data);
+        if (studentInfo.password === studentInfo.confirmPassword) {
+            const student = {
+                ...studentInfo,
+                image: await encodeImage(profileImage),
+            };
+            delete student.confirmPassword;
+            try {
+                const { data } = await studentApi.post("", student);
+                console.log(data);
+                setLoading(false);
+            } catch (error) {
+                console.log(error.response.data);
+                setLoading(false);
+            }
+        } else {
             setLoading(false);
-        } catch (error) {
-            console.error(error.response.data);
-            setLoading(false);
+            window.alert("Passwords do not match.");
         }
     }
 
-    return (
+    return loading ? (
+        <div className='flex flex-col justify-center items-center min-h-fillHeight'>
+            <p className='text-3xl py-8'>Registering your new Account </p>
+            <i className='text-6xl fa-spin fas fa-yin-yang'></i>
+        </div>
+    ) : (
         <div className='flex flex-col my-16 mx-auto md:w-1/2 2xl:w-2/5 px-2 justify-center items-center min-h-fillHeight '>
             <h3 className='text-xl md:text-4xl text-gray-300 text-center'>
                 REGISTER A NEW ACCOUNT

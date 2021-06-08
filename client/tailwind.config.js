@@ -7,13 +7,16 @@ module.exports = {
                 fillHeight: "85vh",
             },
             minHeight: {
-                fillHeight: "85vh",
+                fillHeight: "80vh",
             },
             maxWidth: {
                 "8xl": "95rem",
             },
             text: {
                 "10xl": "12rem",
+            },
+            margin: {
+                "-6": "-6rem",
             },
         },
     },

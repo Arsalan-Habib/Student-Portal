@@ -20,7 +20,7 @@ const registerStudent = async (req, res) => {
 
     // checking if the
     if (!fullName || !seatNumber || !email) {
-        res.status(500).json({
+        res.status(400).json({
             error: "fullName, seatNumber and email are all required fields.",
         });
     }
@@ -31,7 +31,7 @@ const registerStudent = async (req, res) => {
     });
 
     if (checkStudent) {
-        res.status(500).json({
+        res.status(400).json({
             error: "Account already exists for given seatNumber or email.",
         });
     } else {
