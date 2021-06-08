@@ -27,7 +27,7 @@ if (process.env.NODE_ENV === "development") {
 app.use(express.json());
 
 // using the student Router
-app.use("api/student", studentRouter);
+app.use("/api/student", studentRouter);
 
 app.get("/", (req, res) => {
     res.send(
