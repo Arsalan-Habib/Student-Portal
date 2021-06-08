@@ -24,7 +24,8 @@ if (process.env.NODE_ENV === "development") {
 }
 
 // using the built in json parser for parsing requests.
-app.use(express.json());
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 // using the student Router
 app.use("/api/student", studentRouter);
@@ -33,10 +34,6 @@ app.get("/", (req, res) => {
     res.send(
         "Welcome to the student portal api. All the api routes are available as /api"
     );
-});
-
-app.get("/api", (req, res) => {
-    res.send("Welcome to the student portal api.");
 });
 
 // handling not founds

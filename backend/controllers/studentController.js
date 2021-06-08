@@ -1,6 +1,7 @@
 const { uploadToCloudinary } = require("../config/cloudinaryConfig");
 const { Student } = require("../models/Student");
 const { generateToken } = require("../utils/generateToken");
+const asynchandler = require("express-async-handler");
 
 // desc: Register new Student
 // route: /api/student
@@ -35,10 +36,7 @@ const registerStudent = async (req, res) => {
         });
     } else {
         // uploading image to cloudinary.
-        let imageUrl = await uploadToCloudinary(
-            `data:image/png;base64,${image}`,
-            seatNumber
-        );
+        let imageUrl = await uploadToCloudinary(image, seatNumber);
 
         const student = new Student({
             fullName,
