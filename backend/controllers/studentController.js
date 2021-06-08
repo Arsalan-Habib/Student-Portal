@@ -1,3 +1,4 @@
+const { uploadToCloudinary } = require("../config/cloudinaryConfig");
 const { Student } = require("../models/Student");
 const { generateToken } = require("../utils/generateToken");
 
@@ -13,27 +14,53 @@ const registerStudent = async (req, res) => {
         email,
         shift,
         password,
+        image,
     } = req.body;
 
-    const student = new Student({
-        fullName,
-        seatNumber,
-        faculty,
-        phoneNumber,
-        email,
-        shift,
-        password,
+    // checking if the
+    if (!fullName || !seatNumber || !email) {
+        res.status(500).json({
+            error: "fullName, seatNumber and email are all required fields.",
+        });
+    }
+
+    // checking to see if account already exists with seatNumber or email
+    let checkStudent = await Student.findOne({
+        $or: [{ seatNumber: seatNumber }, { email: email }],
     });
 
-    try {
-        let createdStudent = await student.save();
-        createdStudent = await Student.findById(createdStudent._id).select({
-            __v: 0,
-            password: 0,
+    if (checkStudent) {
+        res.status(500).json({
+            error: "Account already exists for given seatNumber or email.",
         });
-        res.status(201).json(createdStudent);
-    } catch (error) {
-        throw new Error(error.message);
+    } else {
+        // uploading image to cloudinary.
+        let imageUrl = await uploadToCloudinary(
+            `data:image/png;base64,${image}`,
+            seatNumber
+        );
+
+        const student = new Student({
+            fullName,
+            seatNumber,
+            faculty,
+            phoneNumber,
+            email,
+            shift,
+            password,
+            image: imageUrl,
+        });
+
+        try {
+            let createdStudent = await student.save();
+            createdStudent = await Student.findById(createdStudent._id).select({
+                __v: 0,
+                password: 0,
+            });
+            res.status(201).json(createdStudent);
+        } catch (error) {
+            throw new Error(error.message);
+        }
     }
 };
 

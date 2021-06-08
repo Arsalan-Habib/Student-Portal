@@ -1,5 +1,4 @@
 var cloudinary = require("cloudinary").v2;
-const fs = require("fs");
 const dotenv = require("dotenv");
 
 // linking to the .env file
@@ -12,16 +11,25 @@ cloudinary.config({
 });
 
 // async uploader function
-function uploadToCloudinary(image) {
-    return new Promise((resolve, reject) => {
-        cloudinary.uploader.upload(image, (err, result) => {
-            if (err) return reject(err);
-            fs.unlink(image, function (err) {
-                if (err) throw err;
-            });
-            return resolve(result.url);
+function uploadToCloudinary(image, filename) {
+    try {
+        return new Promise((resolve, reject) => {
+            cloudinary.uploader.upload(
+                image,
+                {
+                    folder: "Student-Portal/Profile-images/",
+                    public_id: filename,
+                    unique_filename: true,
+                },
+                (err, result) => {
+                    if (err) return reject(err);
+                    return resolve(result.url);
+                }
+            );
         });
-    });
+    } catch (error) {
+        console.error(error);
+    }
 }
 
 module.exports = {
