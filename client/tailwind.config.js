@@ -12,6 +12,9 @@ module.exports = {
             maxWidth: {
                 "8xl": "95rem",
             },
+            text: {
+                "10xl": "12rem",
+            },
         },
     },
     variants: {
