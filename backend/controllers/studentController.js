@@ -79,6 +79,7 @@ const authenticateStudent = async (req, res) => {
                         seatNumber: student.seatNumber,
                         phoneNumber: student.phoneNumber,
                         email: student.email,
+                        image: student.image,
                         faculty: student.faculty,
                         shift: student.shift,
                     },
