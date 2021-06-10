@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import { studentApi } from "../config/apiHelper";
 
 const RegisterScreen = () => {
@@ -14,6 +14,10 @@ const RegisterScreen = () => {
         password: "",
         confirmPassword: "",
     });
+
+    let history = useHistory();
+
+    const [registrationStatus, setRegistrationStatus] = useState(false);
 
     const [loading, setLoading] = useState(false);
 
@@ -60,6 +64,7 @@ const RegisterScreen = () => {
             try {
                 const { data } = await studentApi.post("", student);
                 console.log(data);
+                if (data.fullName) setRegistrationStatus(true);
                 setLoading(false);
             } catch (error) {
                 console.log(error.response.data);
@@ -70,6 +75,13 @@ const RegisterScreen = () => {
             window.alert("Passwords do not match.");
         }
     }
+
+    // redirecting on successful registration.
+    useEffect(() => {
+        if (registrationStatus) {
+            history.push("/login");
+        }
+    }, [registrationStatus, history]);
 
     return loading ? (
         <div className='flex flex-col justify-center items-center min-h-fillHeight'>

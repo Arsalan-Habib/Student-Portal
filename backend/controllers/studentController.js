@@ -35,8 +35,11 @@ const registerStudent = async (req, res) => {
             error: "Account already exists for given seatNumber or email.",
         });
     } else {
-        // uploading image to cloudinary.
-        let imageUrl = await uploadToCloudinary(image, seatNumber);
+        // let imageUrl;
+        // if (image) {
+        //     // uploading image to cloudinary.
+        //     imageUrl = await uploadToCloudinary(image, seatNumber);
+        // }
 
         const student = new Student({
             fullName,
@@ -46,7 +49,7 @@ const registerStudent = async (req, res) => {
             email,
             shift,
             password,
-            image: imageUrl,
+            image: image && (await uploadToCloudinary(image, seatNumber)),
         });
 
         try {

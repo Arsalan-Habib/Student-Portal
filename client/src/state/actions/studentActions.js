@@ -3,6 +3,7 @@ import {
     STUDENT_LOGIN_REQUEST,
     STUDENT_LOGIN_SUCCESS,
     STUDENT_LOGIN_FAIL,
+    STUDENT_LOGOUT,
 } from "../types/studentTypes";
 
 export const login = (seatNumber, password) => async (dispatch) => {
@@ -28,5 +29,19 @@ export const login = (seatNumber, password) => async (dispatch) => {
                     ? error.response.data.message
                     : error.message,
         });
+    }
+};
+
+export const logout = () => (dispatch) => {
+    try {
+        dispatch({
+            type: STUDENT_LOGOUT,
+        });
+
+        dispatch({
+            type: STUDENT_LOGOUT,
+        });
+    } catch (error) {
+        console.log(error);
     }
 };

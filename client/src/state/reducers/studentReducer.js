@@ -2,6 +2,7 @@ import {
     STUDENT_LOGIN_FAIL,
     STUDENT_LOGIN_REQUEST,
     STUDENT_LOGIN_SUCCESS,
+    STUDENT_LOGOUT,
 } from "../types/studentTypes";
 
 export const studentDetailsReducer = (state = {}, action) => {
@@ -20,6 +21,12 @@ export const studentDetailsReducer = (state = {}, action) => {
             return {
                 loading: false,
                 error: action.payload,
+            };
+        case STUDENT_LOGOUT:
+            return {
+                loading: false,
+                accessToken: null,
+                student: {},
             };
         default:
             return state;
