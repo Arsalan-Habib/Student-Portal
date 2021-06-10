@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Link, NavLink } from "react-router-dom";
+import { useDispatch, useSelector } from "react-redux";
+import { logout } from "../state/actions/studentActions";
 
 const Navbar = () => {
     // Controlling the profile drop down menu state
@@ -24,6 +26,12 @@ const Navbar = () => {
         backgroundColor: "rgba(31, 41, 55)", // bg-gray-700
         // border: "4px solid rgba(6, 95, 70)",
     };
+
+    const dispatch = useDispatch();
+
+    const { student, accessToken } = useSelector(
+        (state) => state.studentDetails
+    );
 
     return (
         <nav className='bg-gray-900 border-b-2 border-gray-700 font-mono'>
@@ -166,11 +174,17 @@ const Navbar = () => {
                                     <span className='sr-only'>
                                         Open user menu
                                     </span>
-                                    <img
-                                        className='h-8 w-8 rounded-full'
-                                        src='https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=facearea&facepad=2&w=256&h=256&q=80'
-                                        alt=''
-                                    />
+                                    {accessToken && student.image ? (
+                                        <img
+                                            className='w-12 h-12 object-cover rounded-full '
+                                            src={student.image}
+                                            alt=''
+                                        />
+                                    ) : (
+                                        <div className='h-12 w-12 rounded-full flex justify-center items-center'>
+                                            <i className='text-gray-500 text-2xl fas fa-user'></i>
+                                        </div>
+                                    )}
                                 </button>
                             </div>
 
@@ -214,17 +228,19 @@ const Navbar = () => {
                                 >
                                     Settings
                                 </Link>
-                                <Link
-                                    to='/signout'
-                                    onClick={toggleMenu}
+                                <button
+                                    onClick={() => {
+                                        dispatch(logout());
+                                        toggleMenu();
+                                    }}
                                     className={`${
                                         profileDropDown ? "block" : "hidden"
-                                    } px-4 py-2 text-sm text-gray-700 hover:bg-gray-100`}
+                                    } px-4 py-2 text-sm text-gray-700 w-full text-left hover:bg-gray-100`}
                                     aria-current='page'
                                     role='menuitem'
                                 >
                                     Sign Out
-                                </Link>
+                                </button>
                             </div>
                         </div>
                     </div>
