@@ -36,7 +36,7 @@ const Navbar = () => {
 
     return (
         <nav className='bg-gray-900 border-b-2 border-gray-700 font-mono'>
-            <div className='2xl:max-w-8xl max-w-7xl mx-auto px-2 sm:px-6 lg:px-8'>
+            <div className='2xl:max-w-8xl max-w-7xl mx-auto px-2 sm:px-6 lg:px-8 py-1'>
                 <div className='relative flex items-center justify-between h-16'>
                     <div className='absolute inset-y-0 left-0 flex items-center sm:hidden'>
                         {/* Menu Button for mobile */}
@@ -225,17 +225,6 @@ const Navbar = () => {
                                         role='menuitem'
                                     >
                                         Profile
-                                    </Link>
-                                    <Link
-                                        to='/settings'
-                                        onClick={toggleMenu}
-                                        className={`${
-                                            profileDropDown ? "block" : "hidden"
-                                        } px-4 py-2 text-sm text-gray-700 hover:bg-gray-100`}
-                                        aria-current='page'
-                                        role='menuitem'
-                                    >
-                                        Settings
                                     </Link>
                                     <button
                                         onClick={() => {

@@ -1,10 +1,20 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { useSelector } from "react-redux";
+import { useHistory } from "react-router";
 
 const UserInfoRow = () => {
     const { student, accessToken } = useSelector(
         (state) => state.studentDetails
     );
+
+    const history = useHistory();
+
+    // redirecting if not logged in
+    useEffect(() => {
+        if (!accessToken) {
+            history.push("/login");
+        }
+    }, [accessToken, history]);
 
     return (
         <div className='overflow-auto py-14'>
@@ -16,44 +26,41 @@ const UserInfoRow = () => {
                 university.
             </h3>
             <div className='flex my-6 items-center w-full space-y-4 md:space-x-4 md:space-y-0 flex-col md:flex-row'>
-                <div className='w-full md:w-6/12'>
-                    <div className='shadow-lg w-full bg-gray-800 dark:bg-gray-700 relative overflow-hidden'>
+                <div className='w-full md:w-1/3'>
+                    <div className='shadow-lg w-full bg-gray-800 bg-gradient-to-b from-blue-700 to-blue-900 relative overflow-hidden'>
                         <div className='w-full h-full block'>
-                            <div className='flex items-center justify-between px-4 py-8 space-x-4'>
+                            <div className='flex items-center justify-center px-6 py-6 space-x-4'>
                                 <div className='flex items-center'>
                                     {/* insert book/level related icon here */}
-                                    <p className='text-sm text-gray-300 dark:text-white ml-2 font-semibold border-b border-gray-200'>
-                                        Level 2 Ambassador
+                                    <p className='text-xl md:text-2xl text-gray-300 ml-2 font-semibold '>
+                                        COURSES PASSED:
                                     </p>
                                 </div>
-                                <div className='border-b border-gray-200 mt-6 md:mt-0 text-gray-300 dark:text-white font-bold text-xl'>
-                                    $44,453.39
-                                    <span className='text-xs text-gray-400'>
-                                        /$100K
-                                    </span>
+                                <div className='md:mt-0 text-gray-300 font-bold text-2xl'>
+                                    12/12
                                 </div>
                             </div>
                         </div>
                     </div>
                 </div>
-                <div className='flex items-center w-full md:w-1/2 space-x-4'>
-                    <div className='w-1/2'>
-                        <div className='shadow-lg px-4 py-6 w-full bg-gray-800 dark:bg-gray-700 relative'>
-                            <p className='text-2xl text-gray-300 dark:text-white font-bold'>
-                                12
-                            </p>
-                            <p className='text-gray-400 text-sm'>
-                                Active projects
+                <div className='flex items-center w-full md:w-2/3 space-x-4'>
+                    <div className='w-1/2 text-center'>
+                        <div className='shadow-lg px-6 py-6 w-full bg-gray-800 bg-gradient-to-b from-indigo-700 to-indigo-900'>
+                            <p className='text-xl md:text-2xl text-gray-300 font-bold'>
+                                CURRENT CGPA:
+                                <span className='text-gray-200 text-xl md:text-2xl ml-2'>
+                                    3.4
+                                </span>
                             </p>
                         </div>
                     </div>
-                    <div className='w-1/2'>
-                        <div className='shadow-lg px-4 py-6 w-full bg-gray-800 dark:bg-gray-700 relative'>
-                            <p className='text-2xl text-gray-300 dark:text-white font-bold'>
-                                $93.76
-                            </p>
-                            <p className='text-gray-400 text-sm'>
-                                Commission in approval
+                    <div className='w-1/2 text-center'>
+                        <div className='shadow-lg px-6 py-6 w-full bg-gray-800 bg-gradient-to-b from-green-700 to-green-900'>
+                            <p className='text-xl md:text-2xl text-gray-300 font-bold'>
+                                CURRENT SEMESTER:
+                                <span className='text-gray-200 text-2xl ml-2'>
+                                    7
+                                </span>
                             </p>
                         </div>
                     </div>

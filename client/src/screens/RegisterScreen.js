@@ -58,7 +58,7 @@ const RegisterScreen = () => {
         if (studentInfo.password === studentInfo.confirmPassword) {
             const student = {
                 ...studentInfo,
-                image: await encodeImage(profileImage),
+                image: profileImage && (await encodeImage(profileImage)),
             };
             delete student.confirmPassword;
             try {
