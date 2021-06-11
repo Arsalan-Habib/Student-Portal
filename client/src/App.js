@@ -6,7 +6,7 @@ import { BrowserRouter as Router, Route } from "react-router-dom";
 import Container from "./components/Container";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
-
+import ResultScreen from "./screens/ResultScreen";
 function App() {
     return (
         <Provider store={store}>
@@ -16,6 +16,7 @@ function App() {
                     <Container>
                         <Route path='/login' component={LoginScreen} />
                         <Route path='/register' component={RegisterScreen} />
+                        <Route path='/results' component={ResultScreen} />
                     </Container>
                 </Router>
             </PersistGate>
