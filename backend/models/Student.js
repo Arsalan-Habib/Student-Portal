@@ -1,4 +1,5 @@
 const mongoose = require("mongoose");
+const { courseSchema } = require("./Course");
 
 const studentSchema = mongoose.Schema({
     fullName: {
@@ -32,7 +33,7 @@ const studentSchema = mongoose.Schema({
     image: {
         type: String,
     },
-    courses: [],
+    courses: [courseSchema],
 });
 
 studentSchema.index(
