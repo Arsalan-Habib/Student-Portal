@@ -1,0 +1,22 @@
+[
+    {
+        "courseNumber": "BSCS-101",
+        "title": "Internet Application Development",
+        "theoryProfessor": "Mr.Jibran",
+        "labProfessor": "Mr.Jibran",
+        "theoryMarks": 70,
+        "labMarks": 15,
+        "examDate": "28-06-21",
+        "semester": 7
+    },
+    {
+        "courseNumber": "BSCS-101",
+        "title": "Internet Application Development",
+        "theoryProfessor": "Mr.Jibran",
+        "labProfessor": "Mr.Jibran",
+        "theoryMarks": 70,
+        "labMarks": 15,
+        "examDate": "28-06-21",
+        "semester": 7
+    }
+]
