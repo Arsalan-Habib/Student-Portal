@@ -7,6 +7,7 @@ import Container from "./components/Container";
 import LoginScreen from "./screens/LoginScreen";
 import RegisterScreen from "./screens/RegisterScreen";
 import ResultScreen from "./screens/ResultScreen";
+import DashboardScreen from "./screens/DashboardScreen";
 function App() {
     return (
         <Provider store={store}>
@@ -17,6 +18,7 @@ function App() {
                         <Route path='/login' component={LoginScreen} />
                         <Route path='/register' component={RegisterScreen} />
                         <Route path='/results' component={ResultScreen} />
+                        <Route path='/' exact component={DashboardScreen} />
                     </Container>
                 </Router>
             </PersistGate>

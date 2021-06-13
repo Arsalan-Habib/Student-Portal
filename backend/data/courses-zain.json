@@ -1,0 +1,243 @@
+[
+
+    {
+        "courseNumber": "BSCS-301",
+        "title": "Introduction To Computer Science",
+        "theoryProfessor": "Sir Badar Sami",
+        "labProfessor": "Sir Badar Sami",
+        "theoryMarks": 46,
+        "labMarks": 13,
+        "examDate": "28-06-18",
+        "semester": 1
+    },
+    {
+        "courseNumber": "BSCS-303",
+        "title": "Mathematics-I (CALCULUS)",
+        "theoryProfessor": "Sir Ateeq",
+        "labProfessor": "Sir Ateeq",
+        "theoryMarks": 68,
+        "examDate": "30-06-18",
+        "semester": 1
+    },
+    {
+        "courseNumber": "BSCS-305",
+        "title": "Statistics & Data Analysis",
+        "theoryProfessor": "Miss Humera Azam",
+        "labProfessor": "Miss Humera Azam",
+        "theoryMarks": 40,
+        "labMarks": 10,
+        "examDate": "2-07-18",
+        "semester": 1
+    },
+    {
+        "courseNumber": "BSCS-307",
+        "title": "Physics-I",
+        "theoryProfessor": "Sir Zeeshan",
+        "labProfessor": "Sir Zeeshan",
+        "theoryMarks": 65,
+        "labMarks": 16,
+        "examDate": "4-07-18",
+        "semester": 1
+    },
+    {
+        "courseNumber": "BSCS-309",
+        "title": "English",
+        "theoryProfessor": "Miss Zulfishan Ghani",
+        "theoryMarks": 52,
+        "examDate": "6-07-18",
+        "semester": 1
+    },
+    {
+        "courseNumber": "BSCS-311",
+        "title": "Islamic Studies",
+        "theoryProfessor": "Sir Azam",
+        "theoryMarks": 56,
+        "examDate": "8-07-18",
+        "semester": 1
+    },
+    {
+        "courseNumber": "BSCS-313",
+        "title": "Pakistan Studies",
+        "theoryProfessor": "Miss Madiha Khuram",
+        "theoryMarks": 66,
+        "examDate": "10-07-18",
+        "semester": 1
+    },
+    {
+    "courseNumber": "BSCS-302",
+    "title": "Introduction To Computer Science II",
+    "theoryProfessor": "Sir Badar Sami ",
+    "labProfessor": "Sir Badar Sami",
+    "theoryMarks": 58,
+    "labMarks": 13,
+    "examDate": "2-12-18",
+    "semester": 2
+    },
+    {
+        "courseNumber": "BSCS-304",
+        "title": "Mathematics-II",
+        "theoryProfessor": "Sir Ateeq",
+        "theoryMarks": 58,
+        "examDate": "5-12-18",
+        "semester": 2
+        },
+        {
+            "courseNumber": "BSCS-306",
+            "title": "Probability And Statistical Methods",
+            "theoryProfessor": "Miss Humera Bashir",
+            "labProfessor": "Miss Humera Bashir",
+            "theoryMarks": 51,
+            "labMarks": 10,
+            "examDate": "7-12-18",
+            "semester": 2
+            },    
+            {
+                "courseNumber": "BSCS-308",
+                "title": "Physis-II",
+                "theoryProfessor": "Sir Zeeshan",
+                "labProfessor": "Sir Zeeshan",
+                "theoryMarks": 56,
+                "labMarks": 15,
+                "examDate": "9-12-18",
+                "semester": 2
+                },  
+                {
+                    "courseNumber": "BSCS-310",
+                    "title": "English",
+                    "theoryProfessor": "Miss Amna",
+                    "theoryMarks": 58,
+                    "examDate": "11-12-18",
+                    "semester": 2
+                    },
+                    {
+                        "courseNumber": "BSCS-312",
+                        "title": "Urdu/Humanities",
+                        "theoryProfessor": "Miss Humera Azam",
+                        "theoryMarks": 78,
+                        "examDate": "13-12-18",
+                        "semester": 2
+                        },
+
+                        {
+                            "courseNumber": "BSCS-401",
+                            "title": "Digital Computers Design Fundamentals",
+                            "theoryProfessor": "Sir Badar Sami",
+                            "labProfessor": "Sir Badar Sami",
+                            "theoryMarks": 59,
+                            "labMarks": 15,
+                            "examDate": "3-03-19",
+                            "semester": 3
+                            },
+                            {
+                                "courseNumber": "BSCS-403",
+                                "title": "Assembly Language Programming",
+                                "theoryProfessor": "Miss Urooj",
+                                "labProfessor": "Miss Urooj",
+                                "theoryMarks": 50,
+                                "labMarks": 11,
+                                "examDate": "5-03-19",
+                                "semester": 3
+                                },
+
+                                {
+                                    "courseNumber": "BSCS-405",
+                                    "title": "Mathematics (Linear Algebra & Analytical Geometry)",
+                                    "theoryProfessor": "Sir Usama",
+                                    "theoryMarks": 83,
+                                    "examDate": "8-03-19",
+                                    "semester": 3
+                                    },
+                                    {
+                                        "courseNumber": "BSCS-409",
+                                        "title": "Materials, Semiconductors And Devices",
+                                        "theoryProfessor": "Sir Farhan",
+                                        "labProfessor": "Sir Farhan",
+                                        "theoryMarks": 50,
+                                        "labMarks": 14,
+                                        "examDate": "10-03-19",
+                                        "semester": 3
+                                        },
+                                    {
+                                        "courseNumber": "BSCS-411",
+                                        "title": "Discrete Mathematics",
+                                        "theoryProfessor": "Miss Saima Ashraf",
+                                        "theoryMarks": 67,
+                                        "examDate": "13-03-19",
+                                        "semester": 3
+                                        },
+                                        {
+                                            "courseNumber": "BSCS-413",
+                                            "title": "Object Oriented Programming",
+                                            "theoryProfessor": "Miss Humera Tariq",
+                                            "labProfessor": "Miss Huemra Tariq",
+                                            "theoryMarks": 47,
+                                            "labMarks": 18,
+                                            "examDate": "15-03-19",
+                                            "semester": 3
+                                            },
+                                            {
+                                                "courseNumber": "BSCS-402",
+                                                "title": "Data Structure",
+                                                "theoryProfessor": "Sir Saeed",
+                                                "labProfessor": "Sir Saeed",
+                                                "theoryMarks": 56,
+                                                "labMarks": 12,
+                                                "examDate": "2-11-19",
+                                                "semester": 4
+                                                },
+                                                {
+                                                    "courseNumber": "BSCS-404",
+                                                    "title": "System Design With Microprocessor",
+                                                    "theoryProfessor": "Sir Taha Bin Niaz",
+                                                    "labProfessor": "Sir Taha Bin Niaz",
+                                                    "theoryMarks": 0,
+                                                    "labMarks": 0,
+                                                    "examDate": "4-11-19",
+                                                    "semester": 4
+                                                    },
+                                                    {
+                                                        "courseNumber": "BSCS-406",
+                                                        "title": "Numerical Analysis",
+                                                        "theoryProfessor": "Miss Shaista Raees",
+                                                        "labProfessor": "Miss Shaista Raees",
+                                                        "theoryMarks": 63,
+                                                        "labMarks": 16,
+                                                        "examDate": "7-11-19",
+                                                        "semester": 4
+                                                        },
+                                                        {
+                                                            "courseNumber": "BSCS-410",
+                                                            "title": "Basic Electronics",
+                                                            "theoryProfessor": "Sir Farhan",
+                                                            "labProfessor": "Sir Farhan",
+                                                            "theoryMarks": 62,
+                                                            "labMarks": 16,
+                                                            "examDate": "9-11-19",
+                                                            "semester": 4
+                                                            },
+                                                            {
+                                                                "courseNumber": "BSCS-412",
+                                                                "title": "Software Engineering & Project Management",
+                                                                "theoryProfessor": "Sir Hussain",
+                                                                "labProfessor": "Sir Hussain",
+                                                                "theoryMarks": 54,
+                                                                "labMarks": 14,
+                                                                "examDate": "11-11-19",
+                                                                "semester": 4
+                                                                },
+                                                                {
+                                                                    "courseNumber": "BSCS-414",
+                                                                    "title": "Business Communication Skills",
+                                                                    "theoryProfessor": "Sir Khalid Jamal",
+                                                                    "theoryMarks": 82,
+                                                                    "examDate": "13-11-19",
+                                                                    "semester": 4
+                                                                    }
+                    
+                
+            
+        
+    
+
+
+]

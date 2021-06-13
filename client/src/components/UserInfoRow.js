@@ -27,7 +27,7 @@ const UserInfoRow = () => {
             </h3>
             <div className='flex my-6 items-center w-full space-y-4 md:space-x-4 md:space-y-0 flex-col md:flex-row'>
                 <div className='w-full md:w-1/3'>
-                    <div className='shadow-lg w-full bg-gray-800 bg-gradient-to-b from-blue-700 to-blue-900 relative overflow-hidden'>
+                    <div className='shadow-lg w-full bg-gray-700 bg-opacity-20 relative overflow-hidden'>
                         <div className='w-full h-full block'>
                             <div className='flex items-center justify-center px-6 py-6 space-x-4'>
                                 <div className='flex items-center'>
@@ -45,7 +45,7 @@ const UserInfoRow = () => {
                 </div>
                 <div className='flex items-center w-full md:w-2/3 space-x-4'>
                     <div className='w-1/2 text-center'>
-                        <div className='shadow-lg px-6 py-6 w-full bg-gray-800 bg-gradient-to-b from-indigo-700 to-indigo-900'>
+                        <div className='shadow-lg px-6 py-6 w-full bg-gray-700 bg-opacity-20'>
                             <p className='text-xl md:text-2xl text-gray-300 font-bold'>
                                 CURRENT CGPA:
                                 <span className='text-gray-200 text-xl md:text-2xl ml-2'>
@@ -55,7 +55,7 @@ const UserInfoRow = () => {
                         </div>
                     </div>
                     <div className='w-1/2 text-center'>
-                        <div className='shadow-lg px-6 py-6 w-full bg-gray-800 bg-gradient-to-b from-green-700 to-green-900'>
+                        <div className='shadow-lg px-6 py-6 w-full bg-gray-700 bg-opacity-20'>
                             <p className='text-xl md:text-2xl text-gray-300 font-bold'>
                                 CURRENT SEMESTER:
                                 <span className='text-gray-200 text-2xl ml-2'>
