@@ -1,4 +1,7 @@
 import {
+    GET_RESULTS_FAIL,
+    GET_RESULTS_REQUEST,
+    GET_RESULTS_SUCCESS,
     STUDENT_LOGIN_FAIL,
     STUDENT_LOGIN_REQUEST,
     STUDENT_LOGIN_SUCCESS,
@@ -28,6 +31,31 @@ export const studentDetailsReducer = (state = {}, action) => {
                 accessToken: null,
                 student: {},
             };
+        default:
+            return state;
+    }
+};
+
+// for handling result state change
+export const studentResultsReducer = (state = {}, action) => {
+    switch (action.type) {
+        case GET_RESULTS_REQUEST:
+            return {
+                loading: true,
+            };
+
+        case GET_RESULTS_SUCCESS:
+            return {
+                results: action.payload,
+                loading: false,
+            };
+
+        case GET_RESULTS_FAIL:
+            return {
+                error: action.payload,
+                loading: false,
+            };
+
         default:
             return state;
     }

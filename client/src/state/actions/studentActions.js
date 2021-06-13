@@ -4,8 +4,12 @@ import {
     STUDENT_LOGIN_SUCCESS,
     STUDENT_LOGIN_FAIL,
     STUDENT_LOGOUT,
+    GET_RESULTS_REQUEST,
+    GET_RESULTS_SUCCESS,
+    GET_RESULTS_FAIL,
 } from "../types/studentTypes";
 
+// logging in
 export const login = (seatNumber, password) => async (dispatch) => {
     try {
         dispatch({
@@ -32,6 +36,7 @@ export const login = (seatNumber, password) => async (dispatch) => {
     }
 };
 
+// logging out
 export const logout = () => (dispatch) => {
     try {
         dispatch({
@@ -43,5 +48,27 @@ export const logout = () => (dispatch) => {
         });
     } catch (error) {
         console.log(error);
+    }
+};
+
+// getting courses
+export const getResults = (seatNumber) => async (dispatch) => {
+    try {
+        dispatch({
+            type: GET_RESULTS_REQUEST,
+        });
+
+        const { data } = await studentApi.get(`/courses/${seatNumber}`);
+        if (data.courses) {
+            dispatch({
+                type: GET_RESULTS_SUCCESS,
+                payload: data.courses,
+            });
+        }
+    } catch (error) {
+        dispatch({
+            type: GET_RESULTS_FAIL,
+            payload: error.response.data.message,
+        });
     }
 };

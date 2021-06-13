@@ -13,11 +13,11 @@ const initialState = {
         accessToken: null,
         student: {},
     },
-    // for all courses
-    getCourses: {
+    // for all results
+    getResults: {
         loading: true,
         error: null,
-        courses: [],
+        results: [],
     },
 };
 

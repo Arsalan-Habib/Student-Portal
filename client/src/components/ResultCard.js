@@ -41,7 +41,7 @@ const ResultCard = ({
                                 Theory
                             </p>
                             <p className='text-lg text-gray-200  font-normal'>
-                                {theoryMarks}/80
+                                {theoryMarks}/{labMarks ? 80 : 100}
                             </p>
                         </div>
                         <div>
@@ -49,7 +49,7 @@ const ResultCard = ({
                                 Lab
                             </p>
                             <p className='text-lg text-gray-200  font-normal'>
-                                {labMarks}/20
+                                {labMarks ? `${labMarks}/20` : "N/A"}
                             </p>
                         </div>
                     </div>
