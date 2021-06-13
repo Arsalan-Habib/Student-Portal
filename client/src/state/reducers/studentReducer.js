@@ -8,6 +8,7 @@ import {
     STUDENT_LOGOUT,
 } from "../types/studentTypes";
 
+// handling student details state changes
 export const studentDetailsReducer = (state = {}, action) => {
     switch (action.type) {
         case STUDENT_LOGIN_REQUEST:

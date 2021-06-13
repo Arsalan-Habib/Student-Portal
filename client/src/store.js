@@ -3,7 +3,10 @@ import storage from "redux-persist/lib/storage";
 import thunk from "redux-thunk";
 import { composeWithDevTools } from "redux-devtools-extension";
 import { persistStore, persistReducer } from "redux-persist";
-import { studentDetailsReducer } from "./state/reducers/studentReducer";
+import {
+    studentDetailsReducer,
+    studentResultsReducer,
+} from "./state/reducers/studentReducer";
 
 const initialState = {
     // student login and authentication details
@@ -14,7 +17,7 @@ const initialState = {
         student: {},
     },
     // for all results
-    getResults: {
+    studentResults: {
         loading: true,
         error: null,
         results: [],
@@ -25,6 +28,7 @@ const middleware = [thunk];
 
 const reducer = combineReducers({
     studentDetails: studentDetailsReducer,
+    studentResults: studentResultsReducer,
 });
 
 // REDUX PERSIST SETUP
