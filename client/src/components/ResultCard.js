@@ -1,14 +1,21 @@
 import React from "react";
 import { gpaCalculator } from "../utils/gpaCalculator";
 
-const ResultCard = ({ courseTitle, courseNumber, labMarks, theoryMarks }) => {
+const ResultCard = ({
+    courseTitle,
+    courseNumber,
+    labMarks = null,
+    theoryMarks,
+}) => {
     return (
         <div className='shadow-lg  w-full max-w-sm mx-auto mb-2 bg-gray-800 rounded-lg'>
-            <div className='bg-indigo-800 bg-gradient-to-br from-indigo-900 to-blue-700 px-6 py-4 rounded-t-sm'>
-                <h4 className='text-2xl  w-max text-gray-300 dark:text-white font-semibold'>
+            <div className='bg-indigo-800 bg-gradient-to-br from-indigo-900 to-blue-700 px-6 py-3 rounded-t-sm'>
+                <h4 className='text-2xl w-max text-gray-300 dark:text-white font-semibold'>
                     {courseNumber}
                 </h4>
-                <p className='text-lg  text-gray-300 '>{courseTitle}</p>
+                <p className='text-lg leading-snug text-gray-300 '>
+                    {courseTitle}
+                </p>
             </div>
             <div className='flex justify-between px-8 py-4 '>
                 <div>

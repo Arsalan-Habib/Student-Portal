@@ -1,7 +1,7 @@
 const { uploadToCloudinary } = require("../config/cloudinaryConfig");
 const { Student } = require("../models/Student");
 const { generateToken } = require("../utils/generateToken");
-const asynchandler = require("express-async-handler");
+const coursesData = require("../data/courses-zain.json");
 
 // desc: Register new Student
 // route: /api/student
@@ -44,6 +44,7 @@ const registerStudent = async (req, res) => {
             shift,
             password,
             image: image && (await uploadToCloudinary(image, seatNumber)),
+            courses: coursesData,
         });
 
         try {
@@ -64,7 +65,6 @@ const registerStudent = async (req, res) => {
 // Method: POST
 const authenticateStudent = async (req, res) => {
     const { seatNumber, password } = req.body;
-
     try {
         const student = await Student.findOne({ seatNumber: seatNumber });
         if (student) {

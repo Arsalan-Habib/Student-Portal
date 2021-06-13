@@ -17,7 +17,7 @@ const UserInfoRow = () => {
     }, [accessToken, history]);
 
     return (
-        <div className='overflow-auto py-14'>
+        <div className='overflow-auto py-12 xl:px-14'>
             <h2 className='text-4xl font-semibold text-gray-200'>
                 Welcome Back,&nbsp;{student.fullName}
             </h2>
