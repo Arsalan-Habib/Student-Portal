@@ -3,15 +3,15 @@ const mongoose = require("mongoose");
 const courseSchema = mongoose.Schema({
     courseNumber: {
         type: String,
-        required: true,
     },
     title: {
         type: String,
-        required: true,
     },
     theoryProfessor: {
         type: String,
-        required: true,
+    },
+    labProfessor: {
+        type: String,
     },
     theoryMarks: {
         type: Number,
@@ -24,16 +24,8 @@ const courseSchema = mongoose.Schema({
     },
     semester: {
         type: Number,
-        required: true,
     },
 });
-
-courseSchema.index(
-    {
-        semester: 1,
-    },
-    { unique: true }
-);
 
 const Course = mongoose.model("Course", courseSchema);
 
