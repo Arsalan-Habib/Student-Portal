@@ -3,28 +3,9 @@ import { useDispatch, useSelector } from "react-redux";
 import { getResults } from "../state/actions/studentActions";
 import { gpaCalculator } from "../utils/gpaCalculator";
 
-const UserInfoRow = ({ history }) => {
-    const { student, accessToken } = useSelector(
-        (state) => state.studentDetails
-    );
-    const { results, loading, error } = useSelector(
-        (state) => state.studentResults
-    );
-
+const UserInfoRow = ({ history, results, loading, error, student }) => {
     const [passedCourses, setPassedCourses] = useState([]);
     const [cgpa, setCgpa] = useState(null);
-
-    const dispatch = useDispatch();
-
-    // redirecting if not logged in
-    useEffect(() => {
-        if (!accessToken) {
-            history.push("/login");
-        } else {
-            // fetching results
-            dispatch(getResults(student.seatNumber));
-        }
-    }, [accessToken, history, dispatch, student.seatNumber]);
 
     // for checking pass or fail
     function checkPass(result) {

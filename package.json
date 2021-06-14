@@ -28,6 +28,7 @@
         "jsonwebtoken": "^8.5.1",
         "mongoose": "^5.12.13",
         "pdf2json": "^1.2.1",
+        "recharts": "^2.0.9",
         "uuid": "^8.3.2",
         "xlsx": "^0.16.9"
     },
