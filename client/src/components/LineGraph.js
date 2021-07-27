@@ -36,7 +36,7 @@ const LineGraph = ({ results }) => {
         <div className='pb-8 flex flex-col items-center justify-center'>
             <p className='text-3xl font-bold pb-8 uppercase'>GPA Progress</p>
             <LineChart
-                className='bg-gray-800 bg-gradient-to-t from-gray-800 to-blue-900 b-4 border-gray-500'
+                className='bg-gray-800 bg-gradient-to-t from-gray-800 to-blue-900 '
                 width={800}
                 height={400}
                 data={results}
