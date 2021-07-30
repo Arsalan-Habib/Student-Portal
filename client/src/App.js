@@ -9,6 +9,7 @@ import StudentRegisterScreen from "./screens/StudentRegisterScreen";
 import ResultScreen from "./screens/ResultScreen";
 import DashboardScreen from "./screens/DashboardScreen";
 import StaffRegisterScreen from "./screens/StaffRegisterScreen";
+import StaffDashboardScreen from "./screens/StaffDashboardScreen";
 function App() {
 	return (
 		<Provider store={store}>
@@ -16,17 +17,28 @@ function App() {
 				<Router>
 					<Navbar />
 					<Container>
-						<Route path="/login" component={LoginScreen} />
+						<Route path="/login" exact component={LoginScreen} />
+
+						{/* Student Routes */}
+						<Route path="/" exact component={DashboardScreen} />
 						<Route
 							path="/student-register"
+							exact
 							component={StudentRegisterScreen}
+						/>
+						<Route path="/results" exact component={ResultScreen} />
+
+						{/* Staff Routes */}
+						<Route
+							path="/dashboard"
+							exact
+							component={StaffDashboardScreen}
 						/>
 						<Route
 							path="/staff-register"
+							exact
 							component={StaffRegisterScreen}
 						/>
-						<Route path="/results" component={ResultScreen} />
-						<Route path="/" exact component={DashboardScreen} />
 					</Container>
 				</Router>
 			</PersistGate>

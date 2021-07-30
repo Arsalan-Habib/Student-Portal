@@ -14,7 +14,8 @@ export const staffDetailsReducer = (state = {}, action) => {
 		case STAFF_LOGIN_SUCCESS:
 			return {
 				loading: false,
-				staff: action.payload,
+				accessToken: action.payload.accessToken,
+				staff: action.payload.staff,
 			};
 		case STAFF_LOGIN_FAIL:
 			return {
@@ -25,6 +26,7 @@ export const staffDetailsReducer = (state = {}, action) => {
 			return {
 				loading: false,
 				error: null,
+				accessToken: null,
 				staff: {},
 			};
 		default:

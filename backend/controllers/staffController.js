@@ -59,7 +59,10 @@ const authenticateStaff = async (req, res) => {
 			// needs improvement, jwt and cleaning of sensitive info before sending response
 			if (staff.password === password) {
 				res.status(200);
-				res.json(staff);
+				res.json({
+					staff: staff,
+					accessToken: generateToken(staffId),
+				});
 			} else {
 				res.status(401);
 				res.json({ error: "Login failed. Invalid password." });

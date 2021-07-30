@@ -15,15 +15,25 @@ const LoginScreen = () => {
 	// login form type (student or staff)
 	const [loginType, setLoginType] = useState("student");
 
-	const dispatch = useDispatch();
-	const { accessToken } = useSelector((state) => state.studentDetails);
 	const history = useHistory();
+	// student accessToken
+	const { accessToken: studentToken } = useSelector(
+		(state) => state.studentDetails
+	);
+
+	// staff accessToken
+	const { accessToken: staffToken } = useSelector(
+		(state) => state.staffDetails
+	);
 
 	// toggling form type
 	function toggleForm(e) {
 		e.preventDefault();
 		setLoginType(loginType === "student" ? "staff" : "student");
 	}
+
+	// dispatch function.
+	const dispatch = useDispatch();
 
 	// handling student login
 	async function handleStudentLogin(e) {
@@ -37,12 +47,14 @@ const LoginScreen = () => {
 		dispatch(staffLogin(staffId, password));
 	}
 
-	// redirecting if already logged in.
+	// redirecting if logged in.
 	useEffect(() => {
-		if (accessToken) {
+		if (studentToken) {
 			history.push("/");
+		} else if (staffToken) {
+			history.push("/dashboard");
 		}
-	}, [accessToken, history]);
+	}, [staffToken, studentToken, history]);
 
 	return (
 		<div className="flex flex-col md:mt-8 mx-auto md:w-2/5 px-2 justify-center items-center min-h-fillHeight">

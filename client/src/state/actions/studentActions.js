@@ -1,4 +1,5 @@
 import { studentApi } from "../../config/apiHelper";
+import { STAFF_LOGOUT } from "../types/staffTypes";
 import {
 	STUDENT_LOGIN_REQUEST,
 	STUDENT_LOGIN_SUCCESS,
@@ -36,11 +37,14 @@ export const login = (seatNumber, password) => async (dispatch) => {
 	}
 };
 
-// logging out
+// logging out, handles logout for both student or staff.
 export const logout = () => (dispatch) => {
 	try {
 		dispatch({
 			type: STUDENT_LOGOUT,
+		});
+		dispatch({
+			type: STAFF_LOGOUT,
 		});
 	} catch (error) {
 		console.log(error);
