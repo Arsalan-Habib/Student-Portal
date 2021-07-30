@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Link, useHistory } from "react-router-dom";
 import { login } from "../state/actions/studentActions";
+import { staffLogin } from "../state/actions/staffActions";
 import { useDispatch, useSelector } from "react-redux";
 
 const LoginScreen = () => {
@@ -30,6 +31,12 @@ const LoginScreen = () => {
 		dispatch(login(seatNumber, password));
 	}
 
+	// handling staff login
+	async function handleStaffLogin(e) {
+		e.preventDefault();
+		dispatch(staffLogin(staffId, password));
+	}
+
 	// redirecting if already logged in.
 	useEffect(() => {
 		if (accessToken) {
@@ -38,7 +45,7 @@ const LoginScreen = () => {
 	}, [accessToken, history]);
 
 	return (
-		<div className="flex flex-col  mx-auto md:w-1/3 px-2 justify-center items-center min-h-fillHeight ">
+		<div className="flex flex-col md:mt-8 mx-auto md:w-2/5 px-2 justify-center items-center min-h-fillHeight">
 			<h3 className="text-xl md:text-4xl text-gray-300 text-center">
 				SIGN IN
 			</h3>
@@ -77,7 +84,7 @@ const LoginScreen = () => {
 					<span className="text-sm md:text-lg">
 						Don't have an account? Sign up
 						<Link
-							to="/register"
+							to="/student-register"
 							className="font-semibold  text-gray-100 hover:text-green-500 "
 						>
 							{" "}
@@ -105,7 +112,7 @@ const LoginScreen = () => {
 			) : (
 				<form
 					className="flex flex-col w-full my-6 mt-12"
-					onSubmit={handleStudentLogin}
+					onSubmit={handleStaffLogin}
 				>
 					<label className=" md:text-xl" htmlFor="seatNumber">
 						Staff ID:
@@ -137,7 +144,7 @@ const LoginScreen = () => {
 					<span className="text-sm md:text-lg">
 						Don't have an account? Sign up
 						<Link
-							to="/register"
+							to="/staff-register"
 							className="font-semibold  text-gray-100 hover:text-green-500 "
 						>
 							{" "}
