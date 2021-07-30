@@ -27,6 +27,7 @@ const initialState = {
 	staffDetails: {
 		loading: false,
 		error: null,
+		accessToken: null,
 		staff: {},
 	},
 };

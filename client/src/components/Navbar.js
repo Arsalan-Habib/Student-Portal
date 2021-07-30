@@ -30,8 +30,14 @@ const Navbar = () => {
 	const dispatch = useDispatch();
 	const history = useHistory();
 
-	const { student, accessToken } = useSelector(
+	// student state
+	const { student, accessToken: studentToken } = useSelector(
 		(state) => state.studentDetails
+	);
+
+	// staff state
+	const { staff, accessToken: staffToken } = useSelector(
+		(state) => state.staffDetails
 	);
 
 	return (
@@ -110,7 +116,7 @@ const Navbar = () => {
 							/>
 						</div>
 						<div className="hidden sm:block sm:ml-6">
-							{accessToken ? (
+							{studentToken ? (
 								<div className="flex space-x-4">
 									<NavLink
 										exact
@@ -136,6 +142,26 @@ const Navbar = () => {
 										aria-current="page"
 									>
 										Results
+									</NavLink>
+								</div>
+							) : staffToken ? (
+								<div className="flex space-x-4">
+									<NavLink
+										exact
+										to="/dashboard"
+										activeStyle={activeStyle}
+										className="text-gray-300 px-3 py-2 rounded-md text-lg font-light border border-transparent hover:text-gray-100 hover:bg-gray-700 "
+										aria-current="page"
+									>
+										Dashboard
+									</NavLink>
+									<NavLink
+										to="/notifications"
+										activeStyle={activeStyle}
+										className="text-gray-300 px-3 py-2 rounded-md text-lg font-light border border-transparent hover:text-gray-100 hover:bg-gray-700 "
+										aria-current="page"
+									>
+										Notifications
 									</NavLink>
 								</div>
 							) : (
@@ -179,7 +205,7 @@ const Navbar = () => {
 									type="button"
 									className={
 										"bg-gray-800 flex text-sm rounded-full focus:outline-none " +
-										(!accessToken && "cursor-default") +
+										(!studentToken && "cursor-default") +
 										(profileDropDown &&
 											"focus:ring-2 focus:ring-white ")
 									}
@@ -188,7 +214,7 @@ const Navbar = () => {
 									aria-haspopup="true"
 								>
 									<span className="sr-only">Open user menu</span>
-									{accessToken && student.image ? (
+									{studentToken && student.image ? (
 										<img
 											className="w-12 h-12 object-cover rounded-full "
 											src={student.image}
@@ -202,17 +228,8 @@ const Navbar = () => {
 								</button>
 							</div>
 
-							{/* <!--
-            Dropdown menu, show/hide based on menu state.
-
-            Entering: "transition ease-out duration-100"
-              From: "transform opacity-0 scale-95"
-              To: "transform opacity-100 scale-100"
-            Leaving: "transition ease-in duration-75"
-              From: "transform opacity-100 scale-100"
-              To: "transform opacity-0 scale-95"
-          --> */}
-							{accessToken && (
+							{/*Dropdown menu, show/hide based on menu state.*/}
+							{(studentToken || staffToken) && (
 								<div
 									className={` ${
 										profileDropDown ? "block" : "hidden"
@@ -258,7 +275,7 @@ const Navbar = () => {
 				id="mobile-menu"
 			>
 				<div className="px-2 pt-2 pb-3 space-y-1">
-					{accessToken ? (
+					{studentToken ? (
 						<>
 							<NavLink
 								exact
